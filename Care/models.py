@@ -15,7 +15,20 @@ class Patient(models.Model):
 
     created_date = models.DateField(
             default=timezone.now)
-
-
     def __str__(self):
         return self.full_Name
+
+class MedicalHistory(models.Model):
+     blood_group = models.CharField(max_length=200,blank=True)
+     allergies = models.CharField(max_length=200,blank=True)
+     regular_medications=models.CharField(max_length=200,blank=True)
+     current_or_recurringInjuries=models.CharField(max_length=200,blank=True)
+     disabilities= models.CharField(max_length=200,blank=True)
+     passed_Illness=models.CharField(max_length=200,blank=True)
+     imunizations=models.CharField(max_length=200,blank=True)
+     health_Risks_Assesments =models.TextField(max_length=200,blank=True)
+
+class Hereditary(models.Model):
+    diseases = models.CharField(max_length=200,blank=True)
+    generalAssessments = models.TextField(max_length=200,blank=True)
+    functional_Assessments = models.TextField(max_length=200,blank=True)
